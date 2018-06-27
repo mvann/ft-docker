@@ -1,0 +1,10 @@
+FROM ubuntu:14.04
+
+RUN sudo apt-get update
+RUN sudo apt-get install -y\
+	curl\
+	openssh-server\
+	ca-certificates
+RUN sudo apt-get install -y postfix
+RUN curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+RUN sudo EXTERNAL_URL="192.168.99.100" apt-get install gitlab-ce
