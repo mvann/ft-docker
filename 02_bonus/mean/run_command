@@ -1,0 +1,1 @@
+docker run --name meanie -p 4040:4040 <image> npm run start:prod
